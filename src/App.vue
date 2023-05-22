@@ -36,18 +36,26 @@
     <p>하이</p>
   </div>
 
-  <List></List>
+  <List :blogList="blogList"/>
 </template>
 
 <script>
+import List from "./components/List.vue";
+import blog from "./assets/blog";
+
 export default {
   name: "App",
+  data() {
+    return {
+      blogList : blog,
+    }
+  },
   components: {
     List: List,
   },
 };
 
-import List from "./components/List.vue";
+
 </script>
 
 <style>

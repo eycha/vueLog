@@ -1,17 +1,35 @@
 <template>
   <div>
-    <h4>블로그 글 제목</h4>
-    <p>블로그 글 날짜</p>
+    <h4>{{ blogList[0].title}}</h4>
+    <p>
+      {{ blogList[0].date }}
+    </p>
   </div>
   <div>
-    <h4>블로그 글 제목</h4>
-    <p>블로그 글 날짜</p>
+    <h4>{{ blogList[1].title}}</h4>
+    <p>{{ blogList[1].date}}</p>
+  </div>
+  <div>
+    <h4>{{ blogList[2].title}}</h4>
+    <p>{{ blogList[2].date}}</p>
   </div>
 </template>
 
 <script>
+
 export default {
   //eslint-disable-next-line
+  name: "List",
+  props: {
+    blogList :Array,
+  },
+  data() {
+
+  },
+  components : {
+
+  }
+
 };
 </script>
 
