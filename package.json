@@ -10,6 +10,7 @@
   "dependencies": {
     "bootstrap": "^5.2.3",
     "core-js": "^3.8.3",
+    "typescript": "^5.0.4",
     "vue": "^3.2.13",
     "vue-router": "^4.2.1"
   },
@@ -41,5 +42,18 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "description": "## Project setup ``` npm install ```",
+  "main": "babel.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eycha/vueLog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eycha/vueLog/issues"
+  },
+  "homepage": "https://github.com/eycha/vueLog#readme"
 }
