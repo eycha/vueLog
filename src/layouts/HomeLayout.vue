@@ -1,8 +1,9 @@
 <template>
-	<Navigation/>
+	<Navigation />
+	<PostingList />
 	<div class="search">
-		<img src="/src/assets/images/glass.png" alt="img" width="20" height="20">
-		<input type="text" name="titleSearch" id="" style="width: 200px; height: 30px">
+		<img src="/src/assets/images/glass.png" alt="img" width="20" height="20" />
+		<input type="text" name="titleSearch" id="" style="width: 200px; height: 30px" />
 		<button type="button">글쓰기</button>
 		<!-- <div class="postingBtn">
 			<div class="q-pa-md q-gutter-sm">
@@ -10,44 +11,31 @@
 			</div>
 		</div> -->
 	</div>
-	
-	<div class="q-pa-lg flex flex-center">
-    <q-pagination
-      v-model="current"
-	  color="purple"
-      :max="5"
-      direction-links
-    />
-  </div>
 
+	<div class="q-pa-lg flex flex-center">
+		<q-pagination v-model="current" color="purple" :max="5" direction-links />
+	</div>
 </template>
 
 <script lang="ts">
 import Navigation from '../components/Navigation.vue';
+import PostingList from '../components/PostingList.vue';
 
 export default {
 	name: 'HomeLayout',
 	data() {
-		return {
-
-		}
+		return {};
 	},
 	components: {
-		Navigation : Navigation,
-    
-    
-  },
-}
-
+		Navigation: Navigation,
+		PostingList: PostingList,
+	},
+};
 </script>
 
 <style scoped>
 .search {
-	display:flex;
+	display: flex;
 	justify-content: center;
-	
 }
-
-
-
 </style>
