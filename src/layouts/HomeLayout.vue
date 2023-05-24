@@ -11,6 +11,15 @@
 		</div> -->
 	</div>
 	
+	<div class="q-pa-lg flex flex-center">
+    <q-pagination
+      v-model="current"
+	  color="purple"
+      :max="5"
+      direction-links
+    />
+  </div>
+
 </template>
 
 <script lang="ts">
