@@ -1,52 +1,44 @@
 <template>
-	
-	<div class="q-pa-md">
-		<div class="q-gutter-y-md" style="max-width: 1000px">
-			
-	
-			<q-tabs
-			v-model="tab"
-			narrow-indicator
-			class="bg-purple text-white shadow-2"
-			>
-			<q-tab name="mails" label="Home" />
-			<q-tab name="alarms" label="방명록" />
-			<q-tab name="movies" label="admin" />
-			</q-tabs>
-	
-			
-		</div>
+	<Navigation/>
+	<div class="search">
+		<img src="/src/assets/images/glass.png" alt="img" width="20" height="20">
+		<input type="text" name="titleSearch" id="" style="width: 200px; height: 30px">
+		<button type="button">글쓰기</button>
+		<!-- <div class="postingBtn">
+			<div class="q-pa-md q-gutter-sm">
+				<q-btn color="purple" label="글쓰기" style="width: 100px; height: 30px"/>
+			</div>
+		</div> -->
 	</div>
 	
-  </template>
+</template>
 
-<script setup lang="ts">
-import BaseHeader from '../components/BaseHeader.vue';
-import BaseDrawer from '../components/BaseDrawer.vue';
-import { ref } from 'vue'
+<script lang="ts">
+import Navigation from '../components/Navigation.vue';
 
-// @Options({
-//   components: {
-   
-//   },
-//   setup () {
-//     return {
-//       tab: ref('mails'),
+export default {
+	name: 'HomeLayout',
+	data() {
+		return {
 
-//     }
-//   }
-  
-// })
+		}
+	},
+	components: {
+		Navigation : Navigation,
+    
+    
+  },
+}
 
 </script>
 
 <style scoped>
-.q-pa-md {
+.search {
 	display:flex;
 	justify-content: center;
 	
 }
-.q-gutter-y-md {
-	width: 1000px;
-}
+
+
+
 </style>
