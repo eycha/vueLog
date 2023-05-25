@@ -33,18 +33,7 @@
 
         />
         </div>
-        
     </div>
-    
-
-  
-
-      
-      
-   
-  
-  
-  
 </template>
 
 <script>
@@ -68,22 +57,22 @@ export default {
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
+    width: 700px;
+    height: 1400px;
+    margin: auto;
+    background-color: #eaeaea;
+    /* background-color: rgba(234, 234, 234, 0.7); */
+	border: 1px solid #ccc;
+    box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
+    /* z-index : 100; */
 }
 
-.title-container {
-    
-    
-}
-
-.content-container {
-    
-}
 
 .btn-container {
     display: flex;
     margin-top: 10px;
     
-
 }
+
 
 </style>
