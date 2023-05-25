@@ -1,6 +1,6 @@
 <template>
     <div class="posting-box">
-        <h4>Posting</h4>
+        <h4>Posting Edit</h4>
         
         <div class="title-container">
             <q-input square filled v-model="text" label="Title" color="purple-12" style="min-width: 500px" />
@@ -23,34 +23,25 @@
             />
         </div>
         <div class="btn-container">
-            <button style="width:50px; height: 30px;">등록</button>
+            <button style="width:80px; height: 30px;">수정하기</button>
             <q-input
             @update:model-value="val => { file = val[0] }"
             filled
             color="purple-12" 
             type="file"
             hint="이미지파일 업로드"
-
         />
         </div>
     </div>
 </template>
 
 <script>
-import { ref } from 'vue'
-
 export default {
-    setup () {
-    return {
-      file: ref(null),
-      
-    }
-  }
+
 }
 </script>
 
 <style>
-
 .posting-box {
     display: flex;
     flex-direction: column;
@@ -60,18 +51,14 @@ export default {
     height: 1400px;
     margin: auto;
     background-color: #eaeaea;
-    /* background-color: rgba(234, 234, 234, 0.7); */
 	border: 1px solid #ccc;
     box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
-    /* z-index : 100; */
 }
 
 
 .btn-container {
     display: flex;
     margin-top: 10px;
-    
 }
-
 
 </style>

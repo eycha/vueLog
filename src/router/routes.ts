@@ -26,6 +26,11 @@ export const routes: RouteRecordRaw[] = [
 		children: [],
 	},
 	{
+		path: '/postingedit',
+		component: () => import('../components/PostingEditModal.vue'),
+		children: [],
+	},
+	{
 		path: '/:catchAll(.*)*',
 		component: () => import('../pages/common/404.vue'),
 	},
