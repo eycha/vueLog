@@ -31,8 +31,13 @@ export const routes: RouteRecordRaw[] = [
 		children: [],
 	},
 	{
-		path: '/Detail',
+		path: '/detail',
 		component: () => import('../pages/PostingDetail.vue'),
+		children: [],
+	},
+	{
+		path: '/admin',
+		component: () => import('../pages/Admin.vue'),
 		children: [],
 	},
 	{
