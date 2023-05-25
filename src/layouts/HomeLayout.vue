@@ -1,6 +1,8 @@
 <template>
 	<Navigation />
 	<PostingList />
+	<PostingList />
+	<PostingList />
 	<div class="search">
 		<img src="/src/assets/images/glass.png" alt="img" width="20" height="20" />
 		<input type="text" name="titleSearch" id="" style="width: 200px; height: 30px" />
