@@ -9,6 +9,7 @@
             <div class="password-box">
                 Password
                 <input type="text">
+                
             </div>
             <div class="confirm-password-box">
                 Confirm Password
@@ -20,6 +21,17 @@
             
         </div>
     </div>
+
+
+
+
+    
+      <!-- <q-input v-model="password" filled type="password" hint="Password" /> -->
+
+    
+
+    
+    
 </template>
 
 <script>
