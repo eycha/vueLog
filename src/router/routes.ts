@@ -16,6 +16,11 @@ export const routes: RouteRecordRaw[] = [
 		children: [],
 	},
 	{
+		path: '/signup',
+		component: () => import('../pages/SignUp.vue'),
+		children: [],
+	},
+	{
 		path: '/:catchAll(.*)*',
 		component: () => import('../pages/common/404.vue'),
 	},
