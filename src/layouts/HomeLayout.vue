@@ -1,36 +1,46 @@
 <template>
+	
 	<Navigation />
-	<PostingList />
-	<PostingList />
-	<PostingList />
-	<div class="search">
-		<img src="/src/assets/images/glass.png" alt="img" width="20" height="20" />
-		<input type="text" name="titleSearch" id="" style="width: 200px; height: 30px" />
-		<button type="button">글쓰기</button>
-		<!-- <div class="postingBtn">
-			<div class="q-pa-md q-gutter-sm">
-				<q-btn color="purple" label="글쓰기" style="width: 100px; height: 30px"/>
-			</div>
-		</div> -->
-	</div>
+	<PostingModal v-if="isModalViewed"/>
+	<PostingList v-if="contentOpen"/>
+	<PostingList v-if="contentOpen"/>
+	<PostingList v-if="contentOpen"/>
+	
+	<div class="content-container" v-if="contentOpen">
+		<div class="search">
+			<img src="/src/assets/images/glass.png" alt="img" width="20" height="20" />
+			<input type="text" name="titleSearch" id="" style="width: 200px; height: 30px" />
+			<button type="button" @click="isModalViewed = true; contentOpen = false" >글쓰기</button>
+			<!-- <div class="postingBtn">
+				<div class="q-pa-md q-gutter-sm">
+					<q-btn color="purple" label="글쓰기" style="width: 100px; height: 30px"/>
+				</div>
+			</div> -->
+		</div>
 
-	<div class="q-pa-lg flex flex-center">
-		<q-pagination v-model="current" color="purple" :max="5" direction-links />
+		<div class="q-pa-lg flex flex-center">
+			<q-pagination v-model="current" color="purple" :max="5" direction-links />
+		</div>
 	</div>
 </template>
 
 <script lang="ts">
 import Navigation from '../components/Navigation.vue';
 import PostingList from '../components/PostingList.vue';
+import PostingModal from '../components/PostingModal.vue';
 
 export default {
 	name: 'HomeLayout',
 	data() {
-		return {};
+		return {
+			isModalViewed: false,
+			contentOpen: true,
+		};
 	},
 	components: {
 		Navigation: Navigation,
 		PostingList: PostingList,
+		PostingModal: PostingModal,
 	},
 };
 </script>

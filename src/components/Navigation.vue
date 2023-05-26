@@ -4,7 +4,7 @@
 			
 	
 			<q-tabs
-			v-model="tab"
+			
 			narrow-indicator
 			class="bg-purple text-white shadow-2"
 			>
