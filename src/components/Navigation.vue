@@ -8,9 +8,9 @@
 			narrow-indicator
 			class="bg-purple text-white shadow-2"
 			>
-			<q-tab name="mails" label="Home" />
-			<q-tab name="alarms" label="방명록" />
-			<q-tab name="movies" label="admin" />
+			<q-tab name="home" label="Home" @click="tabClick('home')"/>
+			<q-tab name="geust" label="방명록" @click="tabClick('guest')"/>
+			<q-tab name="admin" label="admin" @click="tabClick('admin')"/>
 			</q-tabs>
 	
 			
@@ -19,6 +19,22 @@
 </template>
 
 <script setup lang="ts">
+
+import {useRouter} from 'vue-router';
+
+const router = useRouter();
+
+const tabClick = (tabName: string) => {
+	if (tabName == 'guest') {
+		router.push('/guest');
+	}
+	if (tabName == 'admin') {
+		router.push('/admin');
+	}
+	if (tabName == 'home') {
+		router.push('/index');
+	}
+}
 
 </script>
 
