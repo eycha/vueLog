@@ -1,11 +1,12 @@
 <template>
+	
 	<div class="list">
 		<p class="posting-number">게시글 번호</p>
 		<img src="/src/assets/images/glass.png" alt="test" width="300" height="300" class="posting-img"/>
 		<h5>title</h5>
 		<div class="content">		
 			<p>content..</p>
-			<button>수정하기</button>
+			<button type="button" @click="editModalViewed = true; $emit(view,editModalViewed)">수정하기</button>
 		</div>
 	</div>
 	
@@ -13,8 +14,23 @@
 </template>
 
 <script>
-export default {};
+
+
+export default {
+
+	data() {
+		return {
+			editModalViewed: false,
+			
+		};
+	},
+	components: {
+		
+		
+	},
+};
 </script>
+
 
 <style scoped>
 .list {
