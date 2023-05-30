@@ -60,10 +60,9 @@ export default {
     height: 1400px;
     margin: auto;
     background-color: #eaeaea;
-    /* background-color: rgba(234, 234, 234, 0.7); */
 	border: 1px solid #ccc;
     box-shadow : rgba(0,0,0,0.5) 0 0 0 9999px;
-    /* z-index : 100; */
+
 }
 
 

@@ -2,21 +2,14 @@
 	
 	<Navigation />
 	<PostingModal v-if="isModalViewed"/>
-	<PostingList v-if="contentOpen" :contentOpen="contentOpen" @click="test"/>
+	<PostingList v-if="contentOpen"  @click="modalsOpen"/>
     <PostingEditModal v-if="editModalViewed"/>
-	<!-- <PostingList v-if="contentOpen"/>
-	<PostingList v-if="contentOpen"/> -->
-	
 	<div class="content-container" v-if="contentOpen">
 		<div class="search">
 			<img src="/src/assets/images/glass.png" alt="img" width="20" height="20" />
 			<input type="text" name="titleSearch" id="" style="width: 200px; height: 30px" />
 			<button type="button" @click="isModalViewed = true; contentOpen = false" >글쓰기</button>
-			<!-- <div class="postingBtn">
-				<div class="q-pa-md q-gutter-sm">
-					<q-btn color="purple" label="글쓰기" style="width: 100px; height: 30px"/>
-				</div>
-			</div> -->
+			
 		</div>
 
 		<div class="q-pa-lg flex flex-center">
@@ -49,10 +42,12 @@ export default {
 		PostingEditModal: PostingEditModal,
 	},
 	methods: {
-		test (contentOpen:boolean, editModalViewed: boolean) {
+		modalsOpen (contentOpen:boolean, editModalViewed: boolean) {
 			this.contentOpen = contentOpen;
 			this.editModalViewed = editModalViewed
 		}
+
+		
 	}
 
 	

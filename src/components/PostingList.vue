@@ -6,11 +6,10 @@
 		<h5>title</h5>
 		<div class="content">		
 			<p>content..</p>
-			<!-- <button type="button" @click="editModalViewed = true; $emit=(editModalViewed,true)" >수정하기</button> -->
 			<button type="button" @click="isEditModalViewed" >수정하기</button>
 		</div>
 
-		<!-- <posting-edit-modal v-if="editModalViewed" @close="editModalViewed = false" /> -->
+	
 	</div>
 	
 
@@ -40,6 +39,8 @@ export default {
 	
 };
 </script> -->
+
+
 <script setup lang="ts">
 import PostingEditModal from "@/components/PostingEditModal.vue";
 import {ref} from 'vue'
@@ -57,18 +58,16 @@ const isEditModalViewed = () => {
 	emit('click' ,contentOpenValue.value, editModalViewed.value)
 }
 
+
+
+
 </script>
 
 
 <style scoped>
 .list {
-	/* display: flex; */
-	/* flex-direction: column; */
-	/* justify-content: center; */
 	width: 500px;
   	height: 600px;
-	/* background-color: #eaeaea; */
-	/* border: 1px solid #ccc; */
 	padding: 20px;
 	margin: auto;
   
