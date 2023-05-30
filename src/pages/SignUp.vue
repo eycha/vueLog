@@ -34,10 +34,14 @@
     
 </template>
 
-<script>
-export default {
+<script setup lang="ts">
 
-}
+
+import instance from "./modules/axious.ts;
+
+
+
+
 </script>
 
 <style>
