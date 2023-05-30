@@ -2,10 +2,10 @@
 	
 	<Navigation />
 	<PostingModal v-if="isModalViewed"/>
-	
-	<PostingList v-if="contentOpen"/>
-	<PostingList v-if="contentOpen"/>
-	<PostingList v-if="contentOpen"/>
+	<PostingList v-if="contentOpen" :contentOpen="contentOpen" @click="test"/>
+    <PostingEditModal v-if="editModalViewed"/>
+	<!-- <PostingList v-if="contentOpen"/>
+	<PostingList v-if="contentOpen"/> -->
 	
 	<div class="content-container" v-if="contentOpen">
 		<div class="search">
@@ -38,7 +38,7 @@ export default {
 		return {
 			isModalViewed: false,
 			contentOpen: true,
-			editModalViewed : true,
+			editModalViewed : false,
 			view: false,
 		};
 	},
@@ -48,6 +48,13 @@ export default {
 		PostingModal: PostingModal,
 		PostingEditModal: PostingEditModal,
 	},
+	methods: {
+		test (contentOpen:boolean, editModalViewed: boolean) {
+			this.contentOpen = contentOpen;
+			this.editModalViewed = editModalViewed
+		}
+	}
+
 	
 };
 </script>

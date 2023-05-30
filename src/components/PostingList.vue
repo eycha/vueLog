@@ -6,16 +6,17 @@
 		<h5>title</h5>
 		<div class="content">		
 			<p>content..</p>
-			<button type="button" @click="editModalViewed = true ; $emit(editModalViewed)">수정하기</button>
+			<!-- <button type="button" @click="editModalViewed = true; $emit=(editModalViewed,true)" >수정하기</button> -->
+			<button type="button" @click="isEditModalViewed" >수정하기</button>
 		</div>
 
-		<posting-edit-modal v-if="editModalViewed" @close="editModalViewed = false" />
+		<!-- <posting-edit-modal v-if="editModalViewed" @close="editModalViewed = false" /> -->
 	</div>
 	
 
 </template>
 
-<script>
+<!-- <script>
 import PostingEditModal from "@/components/PostingEditModal.vue";
 
 export default {
@@ -30,7 +31,32 @@ export default {
 		PostingEditModal,
 		
 	},
+	methods : {
+		isEditModalViewed : () => {
+			editModalViewed = true; 
+			emi
+		}
+	}
+	
 };
+</script> -->
+<script setup lang="ts">
+import PostingEditModal from "@/components/PostingEditModal.vue";
+import {ref} from 'vue'
+const props = defineProps({
+	contentOpen : {
+		type:Boolean
+	}
+})
+const editModalViewed = ref<boolean>(false)
+const contentOpenValue =ref<boolean>(props.contentOpen)
+const emit = defineEmits(['click'])
+const isEditModalViewed = () => {
+	editModalViewed.value = true; 
+	contentOpenValue.value = false;
+	emit('click' ,contentOpenValue.value, editModalViewed.value)
+}
+
 </script>
 
 
