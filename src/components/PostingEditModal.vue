@@ -37,6 +37,20 @@
 
 <script>
 export default {
+    data() {
+    return {
+      showModal: false,
+      text: '',
+      textareaModel: '',
+      textareaShadowText: '',
+      file: null
+    };
+  },
+  methods: {
+    processTextareaFill() {
+      // process the textarea fill
+    }
+  }
     
 
 }

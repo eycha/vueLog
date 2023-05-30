@@ -6,15 +6,17 @@
 		<h5>title</h5>
 		<div class="content">		
 			<p>content..</p>
-			<button type="button" @click="editModalViewed = true; $emit(view,editModalViewed)">수정하기</button>
+			<button type="button" @click="editModalViewed = true ; $emit(editModalViewed)">수정하기</button>
 		</div>
+
+		<posting-edit-modal v-if="editModalViewed" @close="editModalViewed = false" />
 	</div>
 	
 
 </template>
 
 <script>
-
+import PostingEditModal from "@/components/PostingEditModal.vue";
 
 export default {
 
@@ -25,7 +27,7 @@ export default {
 		};
 	},
 	components: {
-		
+		PostingEditModal,
 		
 	},
 };

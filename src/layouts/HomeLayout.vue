@@ -2,7 +2,7 @@
 	
 	<Navigation />
 	<PostingModal v-if="isModalViewed"/>
-	<PostingEditModal v-if="view"/>
+	
 	<PostingList v-if="contentOpen"/>
 	<PostingList v-if="contentOpen"/>
 	<PostingList v-if="contentOpen"/>
@@ -31,13 +31,14 @@ import PostingList from '../components/PostingList.vue';
 import PostingModal from '../components/PostingModal.vue';
 import PostingEditModal from '../components/PostingEditModal.vue';
 
+
 export default {
 	name: 'HomeLayout',
 	data() {
 		return {
 			isModalViewed: false,
 			contentOpen: true,
-			editModalViewed: false,
+			editModalViewed : true,
 			view: false,
 		};
 	},
@@ -47,11 +48,7 @@ export default {
 		PostingModal: PostingModal,
 		PostingEditModal: PostingEditModal,
 	},
-	method: {
-	editmoal(view) {
-		view = $content
-	}
-	}
+	
 };
 </script>
 
