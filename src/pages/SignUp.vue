@@ -4,20 +4,20 @@
         <div class="input-container">
             <div class="id-box">
                 ID
-                <input type="text">
+                <input type="text" v-model="id">
             </div>
             <div class="password-box">
                 Password
-                <input type="text">
+                <input type="text" v-model="password">
                 
             </div>
             <div class="confirm-password-box">
                 Confirm Password
-                <input type="text">
+                <input type="text" v-model="passwordConfirmed">
             </div>
         </div>
         <div class="btn"> 
-            <button class="signup-button">회원등록</button>
+            <button class="signup-button" @click="register">회원등록</button>
             
         </div>
     </div>
@@ -34,10 +34,45 @@
     
 </template>
 
-<script setup lang="ts">
+<script>
+import instance from "@/modules/axiosTest";
+import requests from "@/modules/request";
 
 
-import instance from "./modules/axious.ts;
+
+
+export default {
+
+    data() {
+        return {
+        id: '',
+        password: '',
+        passwordConfirmed: '',
+        };
+    },
+
+        
+
+    register() {
+    //   console.log('ID:', this.id);
+    //   console.log('Password:', this.password);
+    //   console.log('Confirm Password:', this.passwordConfirmed);
+
+      const accountData = {
+        userId: this.id,
+        userPw: this.password,
+      };
+
+      instance.post(requests.signup, accountData).then(res=>{
+        console.log(res);
+    });
+
+    },
+}
+
+
+
+
 
 
 

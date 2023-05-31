@@ -1,5 +1,5 @@
 const requests = {
-    signup: "/signUp",
-    signin: "/signin",
+    signup: "/member/signUp",
+    signin: "/member/signin",
   };
   export default requests;
