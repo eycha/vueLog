@@ -1,15 +1,21 @@
 <template>
-	
 	<Navigation />
-	<PostingModal v-if="isModalViewed"/>
-	<PostingList v-if="contentOpen"  @click="modalsOpen"/>
-    <PostingEditModal v-if="editModalViewed"/>
+	<PostingModal v-if="postingModalViewed" />
+	<PostingList v-if="contentOpen" @click="editModalsOpen" />
+	<PostingEditModal v-if="editModalViewed" />
 	<div class="content-container" v-if="contentOpen">
 		<div class="search">
 			<img src="/src/assets/images/glass.png" alt="img" width="20" height="20" />
 			<input type="text" name="titleSearch" id="" style="width: 200px; height: 30px" />
-			<button type="button" @click="isModalViewed = true; contentOpen = false" >글쓰기</button>
-			
+			<button
+				type="button"
+				@click="
+					postingModalViewed = true;
+					contentOpen = false;
+				"
+			>
+				글쓰기
+			</button>
 		</div>
 
 		<div class="q-pa-lg flex flex-center">
@@ -24,14 +30,13 @@ import PostingList from '../components/PostingList.vue';
 import PostingModal from '../components/PostingModal.vue';
 import PostingEditModal from '../components/PostingEditModal.vue';
 
-
 export default {
 	name: 'HomeLayout',
 	data() {
 		return {
-			isModalViewed: false,
+			postingModalViewed: false,
 			contentOpen: true,
-			editModalViewed : false,
+			editModalViewed: false,
 			view: false,
 		};
 	},
@@ -42,15 +47,11 @@ export default {
 		PostingEditModal: PostingEditModal,
 	},
 	methods: {
-		modalsOpen (contentOpen:boolean, editModalViewed: boolean) {
+		editModalsOpen(contentOpen: boolean, editModalViewed: boolean) {
 			this.contentOpen = contentOpen;
-			this.editModalViewed = editModalViewed
-		}
-
-		
-	}
-
-	
+			this.editModalViewed = editModalViewed;
+		},
+	},
 };
 </script>
 
